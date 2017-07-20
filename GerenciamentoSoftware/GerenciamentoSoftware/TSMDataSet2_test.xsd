@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TSMDataSet2_test" targetNamespace="http://tempuri.org/TSMDataSet2_test.xsd" xmlns:mstns="http://tempuri.org/TSMDataSet2_test.xsd" xmlns="http://tempuri.org/TSMDataSet2_test.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TSMConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TSMConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GerenciamentoSoftware.Properties.Settings.GlobalReference.Default.TSMConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="notasTableAdapter" GeneratorDataComponentClassName="notasTableAdapter" Name="notas" UserDataComponentName="notasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TSMConnectionString1 (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     n.notad_id AS ID_NOTAS, n.nota_numero AS NºPO, s.soft_nome AS SOFTWARE, s.soft_versao AS VERSAO, n.nota_empresa AS 'EMPRESA', 
+                      n.nota_site AS LOCALIDADE, n.nota_quantidade AS QUANTIDADE, n.nota_tipo_lic AS TIPO
+FROM         notas AS n INNER JOIN
+                      software AS s ON n.fk_soft_id = s.soft_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_NOTAS" DataSetColumn="ID_NOTAS" />
+              <Mapping SourceColumn="NºPO" DataSetColumn="NºPO" />
+              <Mapping SourceColumn="SOFTWARE" DataSetColumn="SOFTWARE" />
+              <Mapping SourceColumn="LOCALIDADE" DataSetColumn="LOCALIDADE" />
+              <Mapping SourceColumn="QUANTIDADE" DataSetColumn="QUANTIDADE" />
+              <Mapping SourceColumn="TIPO" DataSetColumn="TIPO" />
+              <Mapping SourceColumn="VERSAO" DataSetColumn="VERSAO" />
+              <Mapping SourceColumn="EMPRESA" DataSetColumn="EMPRESA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="softwareTableAdapter" GeneratorDataComponentClassName="softwareTableAdapter" Name="software" UserDataComponentName="softwareTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TSMConnectionString1 (Settings)" DbObjectName="TSM.dbo.software" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[software] WHERE (([soft_id] = @Original_soft_id) AND ((@IsNull_soft_nome = 1 AND [soft_nome] IS NULL) OR ([soft_nome] = @Original_soft_nome)) AND ((@IsNull_soft_nomeExecutavel = 1 AND [soft_nomeExecutavel] IS NULL) OR ([soft_nomeExecutavel] = @Original_soft_nomeExecutavel)) AND ((@IsNull_soft_SO = 1 AND [soft_SO] IS NULL) OR ([soft_SO] = @Original_soft_SO)) AND ((@IsNull_soft_fabricante = 1 AND [soft_fabricante] IS NULL) OR ([soft_fabricante] = @Original_soft_fabricante)) AND ((@IsNull_soft_descricao = 1 AND [soft_descricao] IS NULL) OR ([soft_descricao] = @Original_soft_descricao)) AND ((@IsNull_soft_uso = 1 AND [soft_uso] IS NULL) OR ([soft_uso] = @Original_soft_uso)) AND ((@IsNull_soft_categoria = 1 AND [soft_categoria] IS NULL) OR ([soft_categoria] = @Original_soft_categoria)) AND ((@IsNull_soft_status = 1 AND [soft_status] IS NULL) OR ([soft_status] = @Original_soft_status)) AND ((@IsNull_soft_motivo_restricao = 1 AND [soft_motivo_restricao] IS NULL) OR ([soft_motivo_restricao] = @Original_soft_motivo_restricao)) AND ((@IsNull_soft_solicitante = 1 AND [soft_solicitante] IS NULL) OR ([soft_solicitante] = @Original_soft_solicitante)) AND ((@IsNull_soft_analista_ti = 1 AND [soft_analista_ti] IS NULL) OR ([soft_analista_ti] = @Original_soft_analista_ti)) AND ((@IsNull_soft_responsavel_licenca = 1 AND [soft_responsavel_licenca] IS NULL) OR ([soft_responsavel_licenca] = @Original_soft_responsavel_licenca)) AND ((@IsNull_soft_normativo = 1 AND [soft_normativo] IS NULL) OR ([soft_normativo] = @Original_soft_normativo)) AND ((@IsNull_soft_homolog_inc = 1 AND [soft_homolog_inc] IS NULL) OR ([soft_homolog_inc] = @Original_soft_homolog_inc)) AND ((@IsNull_soft_homolog_data = 1 AND [soft_homolog_data] IS NULL) OR ([soft_homolog_data] = @Original_soft_homolog_data)) AND ((@IsNull_soft_data_atualizacao = 1 AND [soft_data_atualizacao] IS NULL) OR ([soft_data_atualizacao] = @Original_soft_data_atualizacao)) AND ((@IsNull_soft_versao = 1 AND [soft_versao] IS NULL) OR ([soft_versao] = @Original_soft_versao)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_soft_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_nome" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_nome" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_nome" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_nome" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_nomeExecutavel" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_nomeExecutavel" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_nomeExecutavel" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_nomeExecutavel" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_SO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_SO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_SO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_SO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_fabricante" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_fabricante" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_fabricante" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_fabricante" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_descricao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_descricao" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_descricao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_descricao" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_uso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_uso" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_uso" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_uso" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_categoria" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_categoria" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_categoria" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_categoria" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_status" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_motivo_restricao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_motivo_restricao" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_motivo_restricao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_motivo_restricao" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_solicitante" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_solicitante" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_solicitante" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_solicitante" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_analista_ti" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_analista_ti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_analista_ti" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_analista_ti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_responsavel_licenca" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_responsavel_licenca" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_responsavel_licenca" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_responsavel_licenca" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_normativo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_normativo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_normativo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_normativo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_homolog_inc" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_homolog_inc" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_homolog_inc" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_homolog_inc" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_homolog_data" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_homolog_data" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_homolog_data" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_homolog_data" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_data_atualizacao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_data_atualizacao" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_data_atualizacao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_data_atualizacao" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_versao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_versao" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_versao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_versao" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[software] ([soft_nome], [soft_nomeExecutavel], [soft_SO], [soft_fabricante], [soft_descricao], [soft_uso], [soft_categoria], [soft_status], [soft_motivo_restricao], [soft_solicitante], [soft_analista_ti], [soft_responsavel_licenca], [soft_normativo], [soft_homolog_inc], [soft_homolog_data], [soft_data_atualizacao], [soft_versao]) VALUES (@soft_nome, @soft_nomeExecutavel, @soft_SO, @soft_fabricante, @soft_descricao, @soft_uso, @soft_categoria, @soft_status, @soft_motivo_restricao, @soft_solicitante, @soft_analista_ti, @soft_responsavel_licenca, @soft_normativo, @soft_homolog_inc, @soft_homolog_data, @soft_data_atualizacao, @soft_versao);
+SELECT soft_id, soft_nome, soft_nomeExecutavel, soft_SO, soft_fabricante, soft_descricao, soft_uso, soft_categoria, soft_status, soft_motivo_restricao, soft_solicitante, soft_analista_ti, soft_responsavel_licenca, soft_normativo, soft_homolog_inc, soft_homolog_data, soft_data_atualizacao, soft_versao FROM software WHERE (soft_id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_nome" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_nome" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_nomeExecutavel" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_nomeExecutavel" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_SO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_SO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_fabricante" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_fabricante" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_descricao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_descricao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_uso" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_uso" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_categoria" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_categoria" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_status" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_motivo_restricao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_motivo_restricao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_solicitante" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_solicitante" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_analista_ti" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_analista_ti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_responsavel_licenca" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_responsavel_licenca" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_normativo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_normativo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_homolog_inc" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_homolog_inc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_homolog_data" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_homolog_data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_data_atualizacao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_data_atualizacao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_versao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_versao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT soft_id, soft_nome, soft_nomeExecutavel, soft_SO, soft_fabricante, soft_descricao, soft_uso, soft_categoria, soft_status, soft_motivo_restricao, soft_solicitante, soft_analista_ti, soft_responsavel_licenca, soft_normativo, soft_homolog_inc, soft_homolog_data, soft_data_atualizacao, soft_versao FROM dbo.software</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[software] SET [soft_nome] = @soft_nome, [soft_nomeExecutavel] = @soft_nomeExecutavel, [soft_SO] = @soft_SO, [soft_fabricante] = @soft_fabricante, [soft_descricao] = @soft_descricao, [soft_uso] = @soft_uso, [soft_categoria] = @soft_categoria, [soft_status] = @soft_status, [soft_motivo_restricao] = @soft_motivo_restricao, [soft_solicitante] = @soft_solicitante, [soft_analista_ti] = @soft_analista_ti, [soft_responsavel_licenca] = @soft_responsavel_licenca, [soft_normativo] = @soft_normativo, [soft_homolog_inc] = @soft_homolog_inc, [soft_homolog_data] = @soft_homolog_data, [soft_data_atualizacao] = @soft_data_atualizacao, [soft_versao] = @soft_versao WHERE (([soft_id] = @Original_soft_id) AND ((@IsNull_soft_nome = 1 AND [soft_nome] IS NULL) OR ([soft_nome] = @Original_soft_nome)) AND ((@IsNull_soft_nomeExecutavel = 1 AND [soft_nomeExecutavel] IS NULL) OR ([soft_nomeExecutavel] = @Original_soft_nomeExecutavel)) AND ((@IsNull_soft_SO = 1 AND [soft_SO] IS NULL) OR ([soft_SO] = @Original_soft_SO)) AND ((@IsNull_soft_fabricante = 1 AND [soft_fabricante] IS NULL) OR ([soft_fabricante] = @Original_soft_fabricante)) AND ((@IsNull_soft_descricao = 1 AND [soft_descricao] IS NULL) OR ([soft_descricao] = @Original_soft_descricao)) AND ((@IsNull_soft_uso = 1 AND [soft_uso] IS NULL) OR ([soft_uso] = @Original_soft_uso)) AND ((@IsNull_soft_categoria = 1 AND [soft_categoria] IS NULL) OR ([soft_categoria] = @Original_soft_categoria)) AND ((@IsNull_soft_status = 1 AND [soft_status] IS NULL) OR ([soft_status] = @Original_soft_status)) AND ((@IsNull_soft_motivo_restricao = 1 AND [soft_motivo_restricao] IS NULL) OR ([soft_motivo_restricao] = @Original_soft_motivo_restricao)) AND ((@IsNull_soft_solicitante = 1 AND [soft_solicitante] IS NULL) OR ([soft_solicitante] = @Original_soft_solicitante)) AND ((@IsNull_soft_analista_ti = 1 AND [soft_analista_ti] IS NULL) OR ([soft_analista_ti] = @Original_soft_analista_ti)) AND ((@IsNull_soft_responsavel_licenca = 1 AND [soft_responsavel_licenca] IS NULL) OR ([soft_responsavel_licenca] = @Original_soft_responsavel_licenca)) AND ((@IsNull_soft_normativo = 1 AND [soft_normativo] IS NULL) OR ([soft_normativo] = @Original_soft_normativo)) AND ((@IsNull_soft_homolog_inc = 1 AND [soft_homolog_inc] IS NULL) OR ([soft_homolog_inc] = @Original_soft_homolog_inc)) AND ((@IsNull_soft_homolog_data = 1 AND [soft_homolog_data] IS NULL) OR ([soft_homolog_data] = @Original_soft_homolog_data)) AND ((@IsNull_soft_data_atualizacao = 1 AND [soft_data_atualizacao] IS NULL) OR ([soft_data_atualizacao] = @Original_soft_data_atualizacao)) AND ((@IsNull_soft_versao = 1 AND [soft_versao] IS NULL) OR ([soft_versao] = @Original_soft_versao)));
+SELECT soft_id, soft_nome, soft_nomeExecutavel, soft_SO, soft_fabricante, soft_descricao, soft_uso, soft_categoria, soft_status, soft_motivo_restricao, soft_solicitante, soft_analista_ti, soft_responsavel_licenca, soft_normativo, soft_homolog_inc, soft_homolog_data, soft_data_atualizacao, soft_versao FROM software WHERE (soft_id = @soft_id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_nome" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_nome" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_nomeExecutavel" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_nomeExecutavel" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_SO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_SO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_fabricante" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_fabricante" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_descricao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_descricao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_uso" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_uso" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_categoria" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_categoria" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_status" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_motivo_restricao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_motivo_restricao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_solicitante" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_solicitante" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_analista_ti" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_analista_ti" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_responsavel_licenca" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_responsavel_licenca" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_normativo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_normativo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_homolog_inc" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_homolog_inc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_homolog_data" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_homolog_data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_data_atualizacao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_data_atualizacao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@soft_versao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_versao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_soft_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_nome" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_nome" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_nome" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_nome" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_nomeExecutavel" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_nomeExecutavel" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_nomeExecutavel" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_nomeExecutavel" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_SO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_SO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_SO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_SO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_fabricante" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_fabricante" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_fabricante" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_fabricante" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_descricao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_descricao" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_descricao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_descricao" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_uso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_uso" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_uso" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_uso" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_categoria" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_categoria" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_categoria" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_categoria" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_status" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_motivo_restricao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_motivo_restricao" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_motivo_restricao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_motivo_restricao" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_solicitante" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_solicitante" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_solicitante" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_solicitante" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_analista_ti" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_analista_ti" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_analista_ti" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_analista_ti" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_responsavel_licenca" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_responsavel_licenca" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_responsavel_licenca" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_responsavel_licenca" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_normativo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_normativo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_normativo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_normativo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_homolog_inc" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_homolog_inc" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_homolog_inc" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_homolog_inc" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_homolog_data" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_homolog_data" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_homolog_data" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_homolog_data" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_data_atualizacao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_data_atualizacao" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_data_atualizacao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_data_atualizacao" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_soft_versao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="soft_versao" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_soft_versao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="soft_versao" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="soft_id" ColumnName="soft_id" DataSourceName="TSM.dbo.software" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@soft_id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="soft_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="soft_id" DataSetColumn="soft_id" />
+              <Mapping SourceColumn="soft_nome" DataSetColumn="soft_nome" />
+              <Mapping SourceColumn="soft_nomeExecutavel" DataSetColumn="soft_nomeExecutavel" />
+              <Mapping SourceColumn="soft_SO" DataSetColumn="soft_SO" />
+              <Mapping SourceColumn="soft_fabricante" DataSetColumn="soft_fabricante" />
+              <Mapping SourceColumn="soft_descricao" DataSetColumn="soft_descricao" />
+              <Mapping SourceColumn="soft_uso" DataSetColumn="soft_uso" />
+              <Mapping SourceColumn="soft_categoria" DataSetColumn="soft_categoria" />
+              <Mapping SourceColumn="soft_status" DataSetColumn="soft_status" />
+              <Mapping SourceColumn="soft_motivo_restricao" DataSetColumn="soft_motivo_restricao" />
+              <Mapping SourceColumn="soft_solicitante" DataSetColumn="soft_solicitante" />
+              <Mapping SourceColumn="soft_analista_ti" DataSetColumn="soft_analista_ti" />
+              <Mapping SourceColumn="soft_responsavel_licenca" DataSetColumn="soft_responsavel_licenca" />
+              <Mapping SourceColumn="soft_normativo" DataSetColumn="soft_normativo" />
+              <Mapping SourceColumn="soft_homolog_inc" DataSetColumn="soft_homolog_inc" />
+              <Mapping SourceColumn="soft_homolog_data" DataSetColumn="soft_homolog_data" />
+              <Mapping SourceColumn="soft_data_atualizacao" DataSetColumn="soft_data_atualizacao" />
+              <Mapping SourceColumn="soft_versao" DataSetColumn="soft_versao" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TSMDataSet2_test" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TSMDataSet2_test" msprop:Generator_UserDSName="TSMDataSet2_test">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="notas" msprop:Generator_TableClassName="notasDataTable" msprop:Generator_TableVarName="tablenotas" msprop:Generator_RowChangedName="notasRowChanged" msprop:Generator_TablePropName="notas" msprop:Generator_RowDeletingName="notasRowDeleting" msprop:Generator_RowChangingName="notasRowChanging" msprop:Generator_RowEvHandlerName="notasRowChangeEventHandler" msprop:Generator_RowDeletedName="notasRowDeleted" msprop:Generator_RowClassName="notasRow" msprop:Generator_UserTableName="notas" msprop:Generator_RowEvArgName="notasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_NOTAS" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_NOTAS" msprop:Generator_ColumnPropNameInRow="ID_NOTAS" msprop:Generator_ColumnPropNameInTable="ID_NOTASColumn" msprop:Generator_UserColumnName="ID_NOTAS" type="xs:int" />
+              <xs:element name="N_x00BA_PO" msprop:Generator_ColumnVarNameInTable="columnNºPO" msprop:Generator_ColumnPropNameInRow="NºPO" msprop:Generator_ColumnPropNameInTable="NºPOColumn" msprop:Generator_UserColumnName="NºPO" type="xs:int" />
+              <xs:element name="SOFTWARE" msprop:Generator_ColumnVarNameInTable="columnSOFTWARE" msprop:Generator_ColumnPropNameInRow="SOFTWARE" msprop:Generator_ColumnPropNameInTable="SOFTWAREColumn" msprop:Generator_UserColumnName="SOFTWARE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOCALIDADE" msprop:Generator_ColumnVarNameInTable="columnLOCALIDADE" msprop:Generator_ColumnPropNameInRow="LOCALIDADE" msprop:Generator_ColumnPropNameInTable="LOCALIDADEColumn" msprop:Generator_UserColumnName="LOCALIDADE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QUANTIDADE" msprop:Generator_ColumnVarNameInTable="columnQUANTIDADE" msprop:Generator_ColumnPropNameInRow="QUANTIDADE" msprop:Generator_ColumnPropNameInTable="QUANTIDADEColumn" msprop:Generator_UserColumnName="QUANTIDADE" type="xs:int" minOccurs="0" />
+              <xs:element name="TIPO" msprop:Generator_ColumnVarNameInTable="columnTIPO" msprop:Generator_ColumnPropNameInRow="TIPO" msprop:Generator_ColumnPropNameInTable="TIPOColumn" msprop:Generator_UserColumnName="TIPO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VERSAO" msprop:Generator_ColumnVarNameInTable="columnVERSAO" msprop:Generator_ColumnPropNameInRow="VERSAO" msprop:Generator_ColumnPropNameInTable="VERSAOColumn" msprop:Generator_UserColumnName="VERSAO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMPRESA" msprop:Generator_ColumnVarNameInTable="columnEMPRESA" msprop:Generator_ColumnPropNameInRow="EMPRESA" msprop:Generator_ColumnPropNameInTable="EMPRESAColumn" msprop:Generator_UserColumnName="EMPRESA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="software" msprop:Generator_TableClassName="softwareDataTable" msprop:Generator_TableVarName="tablesoftware" msprop:Generator_RowChangedName="softwareRowChanged" msprop:Generator_TablePropName="software" msprop:Generator_RowDeletingName="softwareRowDeleting" msprop:Generator_RowChangingName="softwareRowChanging" msprop:Generator_RowEvHandlerName="softwareRowChangeEventHandler" msprop:Generator_RowDeletedName="softwareRowDeleted" msprop:Generator_RowClassName="softwareRow" msprop:Generator_UserTableName="software" msprop:Generator_RowEvArgName="softwareRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="soft_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnsoft_id" msprop:Generator_ColumnPropNameInRow="soft_id" msprop:Generator_ColumnPropNameInTable="soft_idColumn" msprop:Generator_UserColumnName="soft_id" type="xs:int" />
+              <xs:element name="soft_nome" msprop:Generator_ColumnVarNameInTable="columnsoft_nome" msprop:Generator_ColumnPropNameInRow="soft_nome" msprop:Generator_ColumnPropNameInTable="soft_nomeColumn" msprop:Generator_UserColumnName="soft_nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_nomeExecutavel" msprop:Generator_ColumnVarNameInTable="columnsoft_nomeExecutavel" msprop:Generator_ColumnPropNameInRow="soft_nomeExecutavel" msprop:Generator_ColumnPropNameInTable="soft_nomeExecutavelColumn" msprop:Generator_UserColumnName="soft_nomeExecutavel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_SO" msprop:Generator_ColumnVarNameInTable="columnsoft_SO" msprop:Generator_ColumnPropNameInRow="soft_SO" msprop:Generator_ColumnPropNameInTable="soft_SOColumn" msprop:Generator_UserColumnName="soft_SO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_fabricante" msprop:Generator_ColumnVarNameInTable="columnsoft_fabricante" msprop:Generator_ColumnPropNameInRow="soft_fabricante" msprop:Generator_ColumnPropNameInTable="soft_fabricanteColumn" msprop:Generator_UserColumnName="soft_fabricante" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_descricao" msprop:Generator_ColumnVarNameInTable="columnsoft_descricao" msprop:Generator_ColumnPropNameInRow="soft_descricao" msprop:Generator_ColumnPropNameInTable="soft_descricaoColumn" msprop:Generator_UserColumnName="soft_descricao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_uso" msprop:Generator_ColumnVarNameInTable="columnsoft_uso" msprop:Generator_ColumnPropNameInRow="soft_uso" msprop:Generator_ColumnPropNameInTable="soft_usoColumn" msprop:Generator_UserColumnName="soft_uso" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_categoria" msprop:Generator_ColumnVarNameInTable="columnsoft_categoria" msprop:Generator_ColumnPropNameInRow="soft_categoria" msprop:Generator_ColumnPropNameInTable="soft_categoriaColumn" msprop:Generator_UserColumnName="soft_categoria" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_status" msprop:Generator_ColumnVarNameInTable="columnsoft_status" msprop:Generator_ColumnPropNameInRow="soft_status" msprop:Generator_ColumnPropNameInTable="soft_statusColumn" msprop:Generator_UserColumnName="soft_status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_motivo_restricao" msprop:Generator_ColumnVarNameInTable="columnsoft_motivo_restricao" msprop:Generator_ColumnPropNameInRow="soft_motivo_restricao" msprop:Generator_ColumnPropNameInTable="soft_motivo_restricaoColumn" msprop:Generator_UserColumnName="soft_motivo_restricao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="400" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_solicitante" msprop:Generator_ColumnVarNameInTable="columnsoft_solicitante" msprop:Generator_ColumnPropNameInRow="soft_solicitante" msprop:Generator_ColumnPropNameInTable="soft_solicitanteColumn" msprop:Generator_UserColumnName="soft_solicitante" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_analista_ti" msprop:Generator_ColumnVarNameInTable="columnsoft_analista_ti" msprop:Generator_ColumnPropNameInRow="soft_analista_ti" msprop:Generator_ColumnPropNameInTable="soft_analista_tiColumn" msprop:Generator_UserColumnName="soft_analista_ti" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_responsavel_licenca" msprop:Generator_ColumnVarNameInTable="columnsoft_responsavel_licenca" msprop:Generator_ColumnPropNameInRow="soft_responsavel_licenca" msprop:Generator_ColumnPropNameInTable="soft_responsavel_licencaColumn" msprop:Generator_UserColumnName="soft_responsavel_licenca" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_normativo" msprop:Generator_ColumnVarNameInTable="columnsoft_normativo" msprop:Generator_ColumnPropNameInRow="soft_normativo" msprop:Generator_ColumnPropNameInTable="soft_normativoColumn" msprop:Generator_UserColumnName="soft_normativo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_homolog_inc" msprop:Generator_ColumnVarNameInTable="columnsoft_homolog_inc" msprop:Generator_ColumnPropNameInRow="soft_homolog_inc" msprop:Generator_ColumnPropNameInTable="soft_homolog_incColumn" msprop:Generator_UserColumnName="soft_homolog_inc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_homolog_data" msprop:Generator_ColumnVarNameInTable="columnsoft_homolog_data" msprop:Generator_ColumnPropNameInRow="soft_homolog_data" msprop:Generator_ColumnPropNameInTable="soft_homolog_dataColumn" msprop:Generator_UserColumnName="soft_homolog_data" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_data_atualizacao" msprop:Generator_ColumnVarNameInTable="columnsoft_data_atualizacao" msprop:Generator_ColumnPropNameInRow="soft_data_atualizacao" msprop:Generator_ColumnPropNameInTable="soft_data_atualizacaoColumn" msprop:Generator_UserColumnName="soft_data_atualizacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soft_versao" msprop:Generator_ColumnVarNameInTable="columnsoft_versao" msprop:Generator_ColumnPropNameInRow="soft_versao" msprop:Generator_ColumnPropNameInTable="soft_versaoColumn" msprop:Generator_UserColumnName="soft_versao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:notas" />
+      <xs:field xpath="mstns:ID_NOTAS" />
+    </xs:unique>
+    <xs:unique name="software_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:software" />
+      <xs:field xpath="mstns:soft_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

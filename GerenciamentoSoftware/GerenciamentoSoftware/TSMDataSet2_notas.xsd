@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TSMDataSet2_notas" targetNamespace="http://tempuri.org/TSMDataSet2_notas.xsd" xmlns:mstns="http://tempuri.org/TSMDataSet2_notas.xsd" xmlns="http://tempuri.org/TSMDataSet2_notas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TSMConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TSMConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GerenciamentoSoftware.Properties.Settings.GlobalReference.Default.TSMConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="notasTableAdapter" GeneratorDataComponentClassName="notasTableAdapter" Name="notas" UserDataComponentName="notasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TSMConnectionString1 (Settings)" DbObjectName="TSM.dbo.notas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     n.notad_id AS ID_NOTAS, n.nota_numero AS NºPO,
+                          (SELECT     s.soft_nome + '  ' + s.soft_versao AS Expr1) AS SOFTWARE, n.nota_empresa AS 'EMPRESA', n.nota_site AS LOCALIDADE, 
+                      n.nota_quantidade AS QUANTIDADE, n.nota_tipo_lic AS TIPO
+FROM         notas AS n INNER JOIN
+                      software AS s ON n.fk_soft_id = s.soft_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NºPO" DataSetColumn="NºPO" />
+              <Mapping SourceColumn="SOFTWARE" DataSetColumn="SOFTWARE" />
+              <Mapping SourceColumn="QUANTIDADE" DataSetColumn="QUANTIDADE" />
+              <Mapping SourceColumn="TIPO" DataSetColumn="TIPO" />
+              <Mapping SourceColumn="ID_NOTAS" DataSetColumn="ID_NOTAS" />
+              <Mapping SourceColumn="EMPRESA" DataSetColumn="EMPRESA" />
+              <Mapping SourceColumn="LOCALIDADE" DataSetColumn="LOCALIDADE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TSMDataSet2_notas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TSMDataSet2_notas" msprop:Generator_UserDSName="TSMDataSet2_notas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="notas" msprop:Generator_TableClassName="notasDataTable" msprop:Generator_TableVarName="tablenotas" msprop:Generator_TablePropName="notas" msprop:Generator_RowDeletingName="notasRowDeleting" msprop:Generator_RowChangingName="notasRowChanging" msprop:Generator_RowEvHandlerName="notasRowChangeEventHandler" msprop:Generator_RowDeletedName="notasRowDeleted" msprop:Generator_UserTableName="notas" msprop:Generator_RowChangedName="notasRowChanged" msprop:Generator_RowEvArgName="notasRowChangeEvent" msprop:Generator_RowClassName="notasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="N_x00BA_PO" msprop:Generator_ColumnVarNameInTable="columnNºPO" msprop:Generator_ColumnPropNameInRow="NºPO" msprop:Generator_ColumnPropNameInTable="NºPOColumn" msprop:Generator_UserColumnName="NºPO" type="xs:int" />
+              <xs:element name="SOFTWARE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSOFTWARE" msprop:Generator_ColumnPropNameInRow="SOFTWARE" msprop:Generator_ColumnPropNameInTable="SOFTWAREColumn" msprop:Generator_UserColumnName="SOFTWARE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QUANTIDADE" msprop:Generator_ColumnVarNameInTable="columnQUANTIDADE" msprop:Generator_ColumnPropNameInRow="QUANTIDADE" msprop:Generator_ColumnPropNameInTable="QUANTIDADEColumn" msprop:Generator_UserColumnName="QUANTIDADE" type="xs:int" minOccurs="0" />
+              <xs:element name="TIPO" msprop:Generator_ColumnVarNameInTable="columnTIPO" msprop:Generator_ColumnPropNameInRow="TIPO" msprop:Generator_ColumnPropNameInTable="TIPOColumn" msprop:Generator_UserColumnName="TIPO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_NOTAS" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_NOTAS" msprop:Generator_ColumnPropNameInRow="ID_NOTAS" msprop:Generator_ColumnPropNameInTable="ID_NOTASColumn" msprop:Generator_UserColumnName="ID_NOTAS" type="xs:int" />
+              <xs:element name="EMPRESA" msprop:Generator_ColumnVarNameInTable="columnEMPRESA" msprop:Generator_ColumnPropNameInRow="EMPRESA" msprop:Generator_ColumnPropNameInTable="EMPRESAColumn" msprop:Generator_UserColumnName="EMPRESA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOCALIDADE" msprop:Generator_ColumnVarNameInTable="columnLOCALIDADE" msprop:Generator_ColumnPropNameInRow="LOCALIDADE" msprop:Generator_ColumnPropNameInTable="LOCALIDADEColumn" msprop:Generator_UserColumnName="LOCALIDADE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:notas" />
+      <xs:field xpath="mstns:ID_NOTAS" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

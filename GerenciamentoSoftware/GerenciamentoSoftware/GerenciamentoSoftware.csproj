@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{14BBC392-DCFB-4256-99FB-C6BA5AA73F9A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GerenciamentoSoftware</RootNamespace>
+    <AssemblyName>GST</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Tivit\Desktop\TSM_publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <InstallUrl>\\10.11.21.67\tsm\</InstallUrl>
+    <UpdateUrl>\\10.11.21.67\tsm\</UpdateUrl>
+    <ProductName>TSM -  DMT</ProductName>
+    <PublisherName>TSM -  DMT</PublisherName>
+    <SuiteName>TSM -  DMT</SuiteName>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5CDF6355494226B0C76A55EFCC2DE82976E1F0EA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GerenciamentoSoftware_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdvancedDataGridView">
+      <HintPath>.\AdvancedDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="DGV Printer">
+      <HintPath>.\DGV Printer.dll</HintPath>
+    </Reference>
+    <Reference Include="DgvFilterPopup">
+      <HintPath>.\DgvFilterPopup.dll</HintPath>
+    </Reference>
+    <Reference Include="GridLib">
+      <HintPath>.\GridLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ajuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ajuda.Designer.cs">
+      <DependentUpon>ajuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroFornecedor.Designer.cs">
+      <DependentUpon>CadastroFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroNota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroNota.Designer.cs">
+      <DependentUpon>CadastroNota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroSoftware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroSoftware.Designer.cs">
+      <DependentUpon>CadastroSoftware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastro_localidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastro_localidades.Designer.cs">
+      <DependentUpon>cadastro_localidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadusers1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadusers1.Designer.cs">
+      <DependentUpon>cadusers1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadusers\usuarios_cad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadusers\usuarios_cad.Designer.cs">
+      <DependentUpon>usuarios_cad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="configurar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="configurar.Designer.cs">
+      <DependentUpon>configurar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="Consultas\ConsultaNotaLocalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaNotaLocalidade.Designer.cs">
+      <DependentUpon>ConsultaNotaLocalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaNotaNumero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaNotaNumero.Designer.cs">
+      <DependentUpon>ConsultaNotaNumero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaSoftwareCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaSoftwareCategoria.Designer.cs">
+      <DependentUpon>ConsultaSoftwareCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaSoftwareNome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaSoftwareNome.Designer.cs">
+      <DependentUpon>ConsultaSoftwareNome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaSoftwareRestricao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaSoftwareRestricao.Designer.cs">
+      <DependentUpon>ConsultaSoftwareRestricao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet2_INSTALADOS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2_INSTALADOS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FornecedoresCadastrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FornecedoresCadastrados.Designer.cs">
+      <DependentUpon>FornecedoresCadastrados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalidadesCadastradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalidadesCadastradas.Designer.cs">
+      <DependentUpon>LocalidadesCadastradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotasCadastradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotasCadastradas.Designer.cs">
+      <DependentUpon>NotasCadastradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="relaciona_notas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relaciona_notas.Designer.cs">
+      <DependentUpon>relaciona_notas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\consulta1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\consulta1.Designer.cs">
+      <DependentUpon>consulta1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\consulta_equipamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\consulta_equipamento.Designer.cs">
+      <DependentUpon>consulta_equipamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\progress2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\progress2.Designer.cs">
+      <DependentUpon>progress2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\software_empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\software_empresa.Designer.cs">
+      <DependentUpon>software_empresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoftwaresCadastrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoftwaresCadastrados.Designer.cs">
+      <DependentUpon>SoftwaresCadastrados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaLogin.Designer.cs">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TSMDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TSMDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TSMDataSet2.cs">
+      <DependentUpon>TSMDataSet2.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TSMDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TSMDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TSMDataSet2_fornecedor1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TSMDataSet2_fornecedor1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TSMDataSet2_notas.cs">
+      <DependentUpon>TSMDataSet2_notas.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TSMDataSet2_notas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TSMDataSet2_notas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TSMDataSet2_test.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TSMDataSet2_test.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="update\atualizar_registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update\atualizar_registro.Designer.cs">
+      <DependentUpon>atualizar_registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update\atualiza_forn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update\atualiza_forn.Designer.cs">
+      <DependentUpon>atualiza_forn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update\atualiza_localidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update\atualiza_localidade.Designer.cs">
+      <DependentUpon>atualiza_localidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update\atualiza_nota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update\atualiza_nota.Designer.cs">
+      <DependentUpon>atualiza_nota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update\atualiza_users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update\atualiza_users.Designer.cs">
+      <DependentUpon>atualiza_users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioCadastrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuarioCadastrados.Designer.cs">
+      <DependentUpon>UsuarioCadastrados.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ajuda.resx">
+      <DependentUpon>ajuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroFornecedor.resx">
+      <DependentUpon>CadastroFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroNota.resx">
+      <DependentUpon>CadastroNota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroSoftware.resx">
+      <DependentUpon>CadastroSoftware.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastro_localidades.resx">
+      <DependentUpon>cadastro_localidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadusers1.resx">
+      <DependentUpon>cadusers1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadusers\usuarios_cad.resx">
+      <DependentUpon>usuarios_cad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="configurar.resx">
+      <DependentUpon>configurar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaNotaLocalidade.resx">
+      <DependentUpon>ConsultaNotaLocalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaNotaNumero.resx">
+      <DependentUpon>ConsultaNotaNumero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaSoftwareCategoria.resx">
+      <DependentUpon>ConsultaSoftwareCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaSoftwareNome.resx">
+      <DependentUpon>ConsultaSoftwareNome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaSoftwareRestricao.resx">
+      <DependentUpon>ConsultaSoftwareRestricao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FornecedoresCadastrados.resx">
+      <DependentUpon>FornecedoresCadastrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalidadesCadastradas.resx">
+      <DependentUpon>LocalidadesCadastradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotasCadastradas.resx">
+      <DependentUpon>NotasCadastradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBar.resx">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relaciona_notas.resx">
+      <DependentUpon>relaciona_notas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\consulta1.resx">
+      <DependentUpon>consulta1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\consulta_equipamento.resx">
+      <DependentUpon>consulta_equipamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\progress2.resx">
+      <DependentUpon>progress2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\software_empresa.resx">
+      <DependentUpon>software_empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoftwaresCadastrados.resx">
+      <DependentUpon>SoftwaresCadastrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaLogin.resx">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update\atualizar_registro.resx">
+      <DependentUpon>atualizar_registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update\atualiza_forn.resx">
+      <DependentUpon>atualiza_forn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update\atualiza_localidade.resx">
+      <DependentUpon>atualiza_localidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update\atualiza_nota.resx">
+      <DependentUpon>atualiza_nota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update\atualiza_users.resx">
+      <DependentUpon>atualiza_users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioCadastrados.resx">
+      <DependentUpon>UsuarioCadastrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet2_INSTALADOS.xsc">
+      <DependentUpon>DataSet2_INSTALADOS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2_INSTALADOS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2_INSTALADOS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet2_INSTALADOS.xss">
+      <DependentUpon>DataSet2_INSTALADOS.xsd</DependentUpon>
+    </None>
+    <None Include="GerenciamentoSoftware_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TSMDataSet11.xsc">
+      <DependentUpon>TSMDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="TSMDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TSMDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TSMDataSet11.xss">
+      <DependentUpon>TSMDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="TSMDataSet2.xsc">
+      <DependentUpon>TSMDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TSMDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TSMDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TSMDataSet2.xss">
+      <DependentUpon>TSMDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TSMDataSet2_fornecedor1.xsc">
+      <DependentUpon>TSMDataSet2_fornecedor1.xsd</DependentUpon>
+    </None>
+    <None Include="TSMDataSet2_fornecedor1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TSMDataSet2_fornecedor1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TSMDataSet2_fornecedor1.xss">
+      <DependentUpon>TSMDataSet2_fornecedor1.xsd</DependentUpon>
+    </None>
+    <None Include="TSMDataSet2_notas.xsc">
+      <DependentUpon>TSMDataSet2_notas.xsd</DependentUpon>
+    </None>
+    <None Include="TSMDataSet2_notas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TSMDataSet2_notas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TSMDataSet2_notas.xss">
+      <DependentUpon>TSMDataSet2_notas.xsd</DependentUpon>
+    </None>
+    <None Include="TSMDataSet2_test.xsc">
+      <DependentUpon>TSMDataSet2_test.xsd</DependentUpon>
+    </None>
+    <None Include="TSMDataSet2_test.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TSMDataSet2_test.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TSMDataSet2_test.xss">
+      <DependentUpon>TSMDataSet2_test.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Capturar.JPG" />
+    <Content Include="config.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="favicon.ico" />
+    <None Include="Resources\logoTivit-transparente.png" />
+    <None Include="Resources\Background_TSM.bmp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
